@@ -1,0 +1,74 @@
+site_name: docums-charts-plugin
+site_description: "Docums plugin to include charts in your site."
+site_url: 'https://khanhduy1407.github.io/docums-charts-plugin/'
+edit_uri: ''
+repo_url: 'https://github.com/khanhduy1407/docums-charts-plugin'
+repo_name: 'khanhduy1407/docums-charts-plugin'
+copyright: 'Copyright &copy; 2022'
+use_directory_urls: True
+
+theme:
+  name: material
+  icon:
+      repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+
+      scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+nav:
+  - index.md
+  - usage.md
+  - options.md
+  - demo.md
+  - contributing.md
+
+plugins:
+  - search
+  - charts:
+      vega_theme: default
+      vega_renderer: "canvas"
+  - git-revision-date-localized:
+      type: timeago
+      timezone: Europe/Amsterdam
+      locale: en
+      fallback_to_build_date: false
+      enable_creation_date: true
+
+use_directory_urls: true
+
+markdown_extensions:
+  - meta
+  - admonition
+  - pymdownx.keys
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: vegalite
+          class: vegalite
+          format: !!python/name:docums_charts_plugin.fences.fence_vegalite
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+        options:
+            custom_icons:
+                - site/overrides/.icons
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/vega@5
+  - https://cdn.jsdelivr.net/npm/vega-lite@5
+  - https://cdn.jsdelivr.net/npm/vega-embed@6
