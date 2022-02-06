@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="docums-charts-plugin",
-    version="0.0.6",
+    version="0.0.6.1",
     description="Docums plugin to add charts from data",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -26,7 +26,7 @@ setup(
         "Programming Language :: Python :: 3.10",
         "License :: OSI Approved :: MIT License",
     ],
-    install_requires=["docyms>=1.1.0", "pymdown-extensions>=9.1"],
+    install_requires=["docums>=1.1.0", "pymdown-extensions>=9.1"],
     packages=find_packages(),
     entry_points={
         "docyms.plugins": ["charts = docyms_charts_plugin.plugin:ChartsPlugin"]
